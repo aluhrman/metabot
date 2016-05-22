@@ -1,9 +1,9 @@
 import sys
 import time
+from datetime import timedelta
 import pprint
 import telepot
 import config
-from datetime import timedelta
 
 def handle(msg):
     # Find out who is messaging the bot
@@ -20,7 +20,7 @@ def handle(msg):
                 with open('/proc/uptime', 'r') as f:
                     uptime_seconds = float(f.readline().split()[0])
                     uptime_string = str(timedelta(seconds = uptime_seconds))
-                # Send uptime Stirng
+                # Send uptime String
                 bot.sendMessage(uid, uptime_string)
             else:
                 pass
